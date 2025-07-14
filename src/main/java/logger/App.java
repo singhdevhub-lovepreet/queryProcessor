@@ -1,8 +1,8 @@
-package processor;
+package logger;
 
-import processor.queryprocessor.QueryProcessor;
-import processor.queryprocessor.QueryProcessorFactory;
-import processor.utils.FilePathCheck;
+import logger.queryprocessor.QueryProcessor;
+import logger.queryprocessor.QueryProcessorFactory;
+import logger.utils.FilePathCheck;
 
 import java.util.Scanner;
 

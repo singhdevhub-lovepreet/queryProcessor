@@ -1,6 +1,6 @@
-package processor.io;
+package logger.io;
 
-import processor.entity.Log;
+import logger.pojo.Log;
 
 import java.util.Collection;
 

@@ -1,4 +1,4 @@
-package processor.entity;
+package logger.enums;
 
 import java.io.Serializable;
 

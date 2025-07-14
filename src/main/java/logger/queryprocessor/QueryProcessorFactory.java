@@ -1,4 +1,4 @@
-package processor.queryprocessor;
+package logger.queryprocessor;
 
 import java.util.HashMap;
 import java.util.Map;

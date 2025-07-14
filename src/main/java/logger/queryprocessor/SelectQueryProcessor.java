@@ -1,8 +1,8 @@
-package processor.queryprocessor;
+package logger.queryprocessor;
 
-import processor.entity.Log;
-import processor.io.FileReader;
-import processor.io.Reader;
+import logger.pojo.Log;
+import logger.io.FileReader;
+import logger.io.Reader;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -41,7 +41,9 @@ public class SelectQueryProcessor implements QueryProcessor {
     }
 
     private void filter(Collection<Log> logs, String data, Timestamp startTime, Timestamp endTime){
-        return;
+        for (Log log: logs){
+            System.out.println(log.getThreadName() + ": " +log.getData());
+        }
     }
 
 

@@ -1,4 +1,4 @@
-package processor;
+package logger;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

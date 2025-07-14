@@ -1,4 +1,4 @@
-package processor.queryprocessor;
+package logger.queryprocessor;
 
 public interface QueryProcessor {
 

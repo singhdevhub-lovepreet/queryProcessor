@@ -1,6 +1,6 @@
-package processor.io;
+package logger.io;
 
-import processor.entity.Log;
+import logger.pojo.Log;
 
 import java.io.EOFException;
 import java.io.File;
@@ -15,28 +15,35 @@ public class FileReader implements Reader{
     @Override
     public Collection<Log> read(Object source){
         List<Log> logs = new ArrayList<>();
-
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
         try{
             String filePath = (String) source;
 
             File file = new File(filePath);
-            FileInputStream fis = new FileInputStream(file);
-            ObjectInputStream ois = new ObjectInputStream(fis);
+            fis = new FileInputStream(file);
+            ois = new ObjectInputStream(fis);
 
             while(true){
                 try{
                     Log log = (Log) ois.readObject();
                     logs.add(log);
-                }catch (Exception ex){
+                }catch (EOFException ex){
+                    System.out.println("ex");
+                    break;
                     // ignored
-                }finally {
-                    fis.close();
-                    ois.close();
                 }
             }
 
         }catch (Exception ex){
 
+        }finally {
+            try {
+                fis.close();
+                ois.close();
+            }catch (Exception ex){
+                System.out.println("Not able to close the streams");
+            }
         }
         return  logs;
     }
